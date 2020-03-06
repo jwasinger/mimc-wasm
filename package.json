@@ -1,0 +1,33 @@
+{
+  "name": "mimc-merkle-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "benchmark:interpreter": "node --wasm-interpret-all index.js tests/tests-mimc.yml",
+    "benchmark:liftoff": "node index.js tests/tests-mimc.yml",
+    "benchmark:host_funcs": "node index.js tests/tests-mimc-hostfuncs.yml",
+    "build": "npx asc assembly/mimc/benchmark.ts -b assembly/mimc/out/main.wasm -t assembly/mimc/out/main.wat --validate && cd assembly/mimc && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwasinger/mimc-wasm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwasinger/mimc-wasm/issues"
+  },
+  "homepage": "https://github.com/jwasinger/mimc-wasm#readme",
+  "dependencies": {
+    "assemblyscript": "0.8.1",
+    "bn.js": "^5.1.1",
+    "circom": "0.0.34",
+    "circomlib": "0.0.20",
+    "ethereumjs-util": "^6.2.0",
+    "gulp": "^4",
+    "js-yaml": "^3.13.1",
+    "wabt": "1.0.11"
+  }
+}
